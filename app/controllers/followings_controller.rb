@@ -1,6 +1,6 @@
 class FollowingsController < ApplicationController
   def create
-    # params = { following: { user_id: 2 }}
+    # params = { following: { user_id: x, post_id: y }}
     following = params[:following]
     followee = User.find following[:user_id]
     current_user.followees << followee
