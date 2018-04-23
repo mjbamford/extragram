@@ -1,6 +1,11 @@
 class Post < ApplicationRecord
     belongs_to :user
-    belongs_to :author, class_name: 'User', foreign_key: 'user_id'
+    # belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+    # belongs_to :reviwer, class_name: 'User', foreign_key: 'review_id'
     has_many :likes
     has_many :likers, -> { distinct }, through: :likes, source: :user
+
+    def image= image
+        self.image_filename = image.original_filename
+    end
 end
