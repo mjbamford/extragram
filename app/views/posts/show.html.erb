@@ -17,7 +17,15 @@
     </span>
   </div>
   <div class='body'>
-    <%= image_tag @post.image_filename %>
+    <%# Hand-rolled %>
+    <% if @post.image_filename %>
+      <%= image_tag "/posts/#{@post.image_filename}" %>
+    <% end %>
+
+    <%# CarrierWave %>
+    <% if @post.image? %>
+      <%= image_tag @post.image.url %>
+    <% end %>
     Image
   </div>
   <div>
