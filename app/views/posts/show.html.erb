@@ -17,11 +17,6 @@
     </span>
   </div>
   <div class='body'>
-    <%# Hand-rolled %>
-    <% if @post.image_filename %>
-      <%= image_tag "/posts/#{@post.image_filename}" %>
-    <% end %>
-
     <%# CarrierWave %>
     <% if @post.image? %>
       <%= image_tag @post.image.url %>
