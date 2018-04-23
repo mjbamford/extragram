@@ -25,7 +25,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/public/posts
+/public/uploads
 
 # Ignore env files, except the sample
 .env*

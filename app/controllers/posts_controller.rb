@@ -30,7 +30,6 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        upload
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
@@ -68,13 +67,6 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
-    end
-
-    def upload
-      uploaded_io = post_params[:image]
-      File.open(Rails.root.join('public', 'posts', uploaded_io.original_filename), 'wb') do |file|
-        file.write(uploaded_io.read)
-      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
