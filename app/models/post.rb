@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    mount_uploader :image, ImagUploader
+    mount_uploader :image, ImageUploader
     belongs_to :user
     # belongs_to :author, class_name: 'User', foreign_key: 'author_id'
     # belongs_to :reviwer, class_name: 'User', foreign_key: 'review_id'
