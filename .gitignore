@@ -27,4 +27,6 @@
 
 /public/posts
 
+# Ignore env files, except the sample
 .env*
+!.env.sample
