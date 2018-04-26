@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resource  :session, only: [ :new, :create, :destroy ]
+  get 'login', to: 'sessions#new'
+  get 'logout', to: 'sessions#destroy'
+  resource  :cart, only: [ :update, :destroy ]
   resources :users
   resources :posts
   resources :followings, only: [ :create ]
