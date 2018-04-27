@@ -1,0 +1,16 @@
+<pre><%= session[:cart] %></pre>
+
+<%= form_tag transactions_path do %>
+  <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js',
+    class: 'stripe-button',
+    data: {
+      key: ENV['STRIPE_PUBLISHABLE_KEY'],
+      amount: "66666",
+      name: "Michael Bamford",
+      description: "Example charge",
+      image: "https://stripe.com/img/documentation/checkout/marketplace.png",
+      locale: "auto",
+      currency: "aud"
+    }
+  %>
+<% end %>
